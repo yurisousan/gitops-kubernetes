@@ -1,5 +1,7 @@
 # GitOps with ArgoCD
 
+Post reference: [link](https://levelup.gitconnected.com/gitops-in-kubernetes-with-gitlab-ci-and-argocd-9e20b5d3b55b)
+
 ArgoCD Setup
 ```bash
 # create namespace to argo
