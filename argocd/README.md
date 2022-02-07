@@ -43,3 +43,20 @@ argocd app create guestbook \
 --dest-server https://kubernetes.default.svc \
 --dest-namespace guestbook
 ```
+
+GitLab CI/CD + Update Chart
+To see CI/CD visit the [repository](https://gitlab.com/l2548/gitops-app-example)
+
+Create the namespace and the Argo app:
+```bash
+kubectl create namespace webapp-demo
+
+argocd app create webapp \
+--repo https://gitlab.com/l2548/gitops-charts.git \
+--path ./webapp-chart \
+--dest-server https://kubernetes.default.svc \
+--dest-namespace webapp-demo \
+--sync-policy automated \
+--auto-prune \
+--self-heal
+```
