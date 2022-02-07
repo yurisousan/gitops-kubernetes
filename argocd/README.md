@@ -32,7 +32,7 @@ chmod +x /usr/local/bin/argocd
 argocd version
 
 # login 
-argocd localhost:8080 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo) --port-forward-namespace argocd
+argocd login localhost:8080 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo) --port-forward-namespace argocd
 ```
 
 ArgoCD App Example
